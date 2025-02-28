@@ -7,9 +7,9 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 </head>
-<body>
+<body class="bg-[#F4F7FF]">
     <header>
-        <nav class="w-10/12 mx-auto my-4 rounded-xl shadow-md px-3 py-4 flex justify-between">
+        <nav class="w-10/12 mx-auto my-4 rounded-xl shadow-md px-3 py-4 flex justify-between bg-white">
             <div class="flex items-center gap-2">
                 <div>
                     <img class="h-8" src="assets/logo.png" alt="">
@@ -23,7 +23,51 @@
             </div>
         </nav>
     </header>
-    <main></main>
+    <!-- main section -->
+    <main class="w-10/12 mx-auto flex gap-3">
+        <!-- heading section -->
+        <div class="rounded-xl bg-white w-9/12 px-4 py-4">
+            <div class="grid grid-cols-4 gap-4">
+                <div class="flex items-center">
+                    <img src="assets/checkbox.png" alt="">
+                    <div>
+                        <p class="">Task Assigned</p>
+                        <h3 class="text-2xl font-bold">05</h3>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 col-span-2 bg-gradient-to-r from-[#3752FD] to-[#9BA8F8] rounded-xl px-4 py-2 text-white ">
+                    <img class="h-12" src="assets/board.png" alt="">
+                    <p class="">Discover Something New Today!</p>
+                </div>
+                <div class="flex items-center "> 
+                    <img src="assets/calender.png" alt="">
+                    <div>
+                        <p>Wed,</p>
+                        <p>july 28 2025</p>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <div class="bg-[#F4F7FF]">
+                    <div class="px-4 py-2 bg-white rounded-md">
+                        <p>ShopEase</p>
+                    </div>
+                    <h3 class="text-xl font-semibold py-2">Fix Mobile Button Issue</h3>
+                    <div class="bg-white px-4 py-2 rounded xl">
+                        <p>Debug Using Chrome DevTools, check for developping...</p>
+                    </div>
+                </div>
+            </div>
+            <!-- cards section -->
+            
+        </div>
+        <!-- history section -->
+        <div class="flex-grow bg-white rounded-xl">
+           <h1>hello</h1>
+
+        </div>
+    </main>
     <footer></footer>
     
 </body>
