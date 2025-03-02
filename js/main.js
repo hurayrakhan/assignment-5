@@ -1,9 +1,7 @@
 
 document.getElementById("btn-discover").addEventListener("click", function(){
     window.location.href = "/questions.html";
-})
-
-const buttonCompleate = document.querySelectorAll(".btn-compleate");
+});
 
 let time = new Date();
 let formattedTime = time.toLocaleString('en-US', { 
@@ -14,18 +12,16 @@ let formattedTime = time.toLocaleString('en-US', {
     month: 'long',
     year: 'numeric'
 });
+const dateTime = document.getElementById("date-time").innerText = formattedTime;
 
-const dateTime = document.getElementById("date-time").innerText
+const buttonComplete = document.querySelectorAll(".btn-compleate");
 
-const liveDateTime = formattedTime;
-console.log(liveDateTime)
+for(const completeButton of buttonComplete){
+    const btnComplete = completeButton;
+    btnComplete.addEventListener("click", function(){
 
-
-for(const compleatebutton of buttonCompleate){
-    const btnCompleate = compleatebutton;
-    btnCompleate.addEventListener("click", function(){
-
-        btnCompleate.disabled = true;
+        btnComplete.disabled = true;
+        btnComplete.innerText = "Completed"
 
         alert("Board Updated Successfully.");
 
@@ -44,12 +40,7 @@ for(const compleatebutton of buttonCompleate){
         if(sum >= 29){
             alert("Congrats!!! You have completed all the current task.")
         }
-
-
-        
-        
-        
-
+        // activity log 
         const activityLog = document.getElementById("activityLog");
         const activities = document.createElement("p");
         activities.classList.add(
@@ -58,33 +49,21 @@ for(const compleatebutton of buttonCompleate){
             "rounded-xl",
             "shadow-md"
         )
+        // get card-title
+        let card = btnComplete.closest('.card');
+        let title = card.querySelector('.card-title').innerText;
 
-        const cardTitle = document.querySelectorAll(".card-title")
-        for(const title of cardTitle){
-            textTitle = title.innerText
-            console.log(textTitle)
-            
-        }
-        activities.innerText = `You have complete the tast ${textTitle} at ${liveDateTime} `
+        activities.innerText = `You have complete the task ${title} successfully at ${formattedTime} `;
         activityLog.appendChild(activities);
-
-        
-        
-    
-
-        
-        
-    });
-    
+                        
+    });    
 }
-
-
-
+// random background color added
 document.getElementById("random-bg").addEventListener("click", function(){
     let randomColor = getRandomColor();
     document.body.style.backgroundColor = randomColor;
 })
-
+// clear history
 document.getElementById("clear-history").addEventListener("click", function(){
     document.getElementById("activityLog").innerHTML = "";
 })
