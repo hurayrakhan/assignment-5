@@ -1,6 +1,6 @@
 
 document.getElementById("btn-discover").addEventListener("click", function(){
-    window.location.href = "/blog.html";
+    window.location.href = "blog.html";
 });
 
 let time = new Date();
