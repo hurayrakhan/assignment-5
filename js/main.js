@@ -6,7 +6,15 @@ document.getElementById("btn-discover").addEventListener("click", function(){
 const buttonCompleate = document.querySelectorAll(".btn-compleate");
 
 let time = new Date();
-let formattedTime = time.toLocaleString();
+let formattedTime = time.toLocaleString('en-US', { 
+    hour: '2-digit', 
+    minute: '2-digit', 
+    hour12: true,
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric'
+});
+
 const dateTime = document.getElementById("date-time").innerText
 
 const liveDateTime = formattedTime;
@@ -69,6 +77,13 @@ for(const compleatebutton of buttonCompleate){
     });
     
 }
+
+
+
+document.getElementById("random-bg").addEventListener("click", function(){
+    let randomColor = getRandomColor();
+    document.body.style.backgroundColor = randomColor;
+})
 
 document.getElementById("clear-history").addEventListener("click", function(){
     document.getElementById("activityLog").innerHTML = "";
